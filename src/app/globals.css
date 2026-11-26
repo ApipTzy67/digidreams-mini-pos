@@ -102,12 +102,21 @@ body {
 
   html,
   body {
-    width: 58mm !important;
+    width: 100% !important;
     min-height: 0 !important;
     height: auto !important;
     margin: 0 !important;
     padding: 0 !important;
     background: #fff !important;
+  }
+
+  /* Jika driver printer memakai kertas lebih lebar dari 58 mm,
+     struk tetap berada di tengah halaman, bukan menempel di kiri. */
+  body {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
   }
 
   /* Buang semua yang bukan struk dari layout, bukan sekadar disembunyikan.
