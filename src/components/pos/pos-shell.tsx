@@ -327,16 +327,12 @@ export function PosShell({ products }: PosShellProps) {
       <main className="mx-auto grid w-full max-w-[1500px] flex-1 gap-8 px-4 py-8 lg:grid-cols-[minmax(0,1fr)_390px] lg:px-8 lg:py-10">
         <section aria-labelledby="menu-heading" className="min-w-0">
           <div className="mb-7">
-            <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-brand">
-              Pesan di tempat
-            </p>
             <h1
               id="menu-heading"
               className="mt-2 font-display text-4xl leading-[1.05] text-ink sm:text-5xl"
             >
-              Menu hari ini,
+              Daftar Menu
               <br />
-              <span className="text-accent">dibuat segar.</span>
             </h1>
           </div>
 
