@@ -123,6 +123,29 @@ body {
     font-size: 9pt;
   }
 
+  /* Modal cetak: overlay harus ikut hilang dari layout cetak,
+     tetapi struk di dalamnya tetap ikut tercetak. */
+  .receipt-dialog-overlay {
+    position: static !important;
+    display: block !important;
+    overflow: visible !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: auto !important;
+  }
+
+  .receipt-dialog-panel {
+    width: auto !important;
+    max-width: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   .no-print {
     display: none !important;
   }

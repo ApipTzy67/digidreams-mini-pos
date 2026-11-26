@@ -56,7 +56,7 @@ export function ReceiptDialog({ order, onClose }: ReceiptDialogProps) {
 
   return (
     <div
-      className="no-print fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-ink/65 p-4"
+      className="receipt-dialog-overlay fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-ink/65 p-4"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) {
           onClose();
@@ -68,9 +68,9 @@ export function ReceiptDialog({ order, onClose }: ReceiptDialogProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="receipt-dialog-title"
-        className="w-full max-w-md rounded-3xl border border-ink/20 bg-canvas p-4 shadow-2xl"
+        className="receipt-dialog-panel w-full max-w-md rounded-3xl border border-ink/20 bg-canvas p-4 shadow-2xl"
       >
-        <div className="mb-4 flex items-center justify-between gap-3">
+        <div className="no-print mb-4 flex items-center justify-between gap-3">
           <div>
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
               Pembayaran berhasil
@@ -95,7 +95,7 @@ export function ReceiptDialog({ order, onClose }: ReceiptDialogProps) {
 
         <ReceiptPaper order={order} />
 
-        <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="no-print mt-4 grid grid-cols-2 gap-2">
           <Link
             href={`/orders/${order.invoiceNumber}`}
             className="flex h-12 items-center justify-center rounded-xl border border-ink/20 text-sm font-semibold text-ink hover:border-brand hover:text-brand"
