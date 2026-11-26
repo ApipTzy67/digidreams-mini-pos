@@ -23,8 +23,11 @@ export function ReceiptPaper({ order }: ReceiptPaperProps) {
           height={32}
           className="h-8 w-auto"
         />
-        <p className="mt-3 text-[10px] uppercase tracking-[0.18em] text-ink/60">
-          Cafe and Space · Sukoharjo
+        <p className="mt-2 font-display text-[15px] leading-tight text-ink">
+          DigiDreams Cafe and Space
+        </p>
+        <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-ink/60">
+          Sukoharjo
         </p>
         <p className="barcode mt-4 text-lg" aria-hidden="true">
           ||| ||| | ||| || ||| ||
