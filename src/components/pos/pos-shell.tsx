@@ -328,7 +328,7 @@ export function PosShell({ products }: PosShellProps) {
         <section aria-labelledby="menu-heading" className="min-w-0">
           <div className="mb-7">
             <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-brand">
-              Pesan di tempat · ambil sendiri
+              Pesan di tempat
             </p>
             <h1
               id="menu-heading"
