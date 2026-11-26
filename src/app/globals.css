@@ -136,44 +136,92 @@ body {
     position: static !important;
     width: 58mm !important;
     max-width: none !important;
-    margin: 0 !important;
-    padding: 3mm !important;
+    margin: 0 auto !important;
+    padding: 4mm 3mm !important;
     border: 0 !important;
     border-radius: 0 !important;
     background: #fff !important;
     box-shadow: none !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
   .receipt-printable,
   .receipt-printable * {
-    font-size: 8pt !important;
-    line-height: 1.25 !important;
+    font-size: 9pt !important;
+    line-height: 1.3 !important;
+    letter-spacing: 0 !important;
+  }
+
+  .receipt-printable header,
+  .receipt-printable footer {
+    text-align: center !important;
+  }
+
+  .receipt-printable header p {
+    margin: 1.5mm 0 !important;
+  }
+
+  .receipt-printable header p.font-display {
+    font-size: 11pt !important;
+    font-weight: 700 !important;
   }
 
   .receipt-printable img {
-    width: 24mm !important;
+    width: 26mm !important;
     height: auto !important;
     max-width: 100% !important;
   }
 
   .receipt-printable .barcode {
-    font-size: 9pt !important;
+    margin-top: 2.5mm !important;
+    font-size: 11pt !important;
+    letter-spacing: 0.22em !important;
   }
 
-  .receipt-printable .font-display {
-    font-size: 9pt !important;
+  .receipt-printable dl,
+  .receipt-printable ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .receipt-printable dl > div,
+  .receipt-printable ul > li {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 2mm !important;
+    margin: 1mm 0 !important;
+  }
+
+  .receipt-printable ul > li {
+    margin: 2mm 0 !important;
+  }
+
+  .receipt-printable .my-4,
+  .receipt-printable dl:last-of-type > div:last-child {
+    margin: 3mm 0 !important;
+    border-top: 1px dashed rgba(0, 0, 0, 0.55) !important;
+  }
+
+  .receipt-printable dl:last-of-type > div:last-child {
+    padding-top: 2mm !important;
+  }
+
+  .receipt-printable dl:last-of-type dt:last-child,
+  .receipt-printable dl:last-of-type dd:last-child {
+    font-size: 11pt !important;
+    font-weight: 700 !important;
+  }
+
+  .receipt-printable footer p.font-display {
+    font-size: 10pt !important;
+    font-weight: 700 !important;
   }
 
   .receipt-printable .truncate {
     overflow: visible !important;
     text-overflow: clip !important;
     white-space: normal !important;
-  }
-
-  .receipt-printable dl:last-of-type dt:last-child,
-  .receipt-printable dl:last-of-type dd:last-child {
-    font-size: 9pt !important;
-    font-weight: 700 !important;
   }
 
   .no-print {
