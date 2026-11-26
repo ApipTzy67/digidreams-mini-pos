@@ -46,6 +46,7 @@ model Order {
   discount      Int
   tax           Int
   total         Int
+  promoCode     String?
   paymentMethod PaymentMethod
   status        OrderStatus   @default(PAID)
   createdAt     DateTime      @default(now())
