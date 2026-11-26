@@ -100,50 +100,80 @@ body {
     margin: 0;
   }
 
+  html,
   body {
-    background: #fff;
-  }
-
-  body * {
-    visibility: hidden !important;
-  }
-
-  .receipt-printable,
-  .receipt-printable * {
-    visibility: visible !important;
-  }
-
-  .receipt-printable {
-    position: absolute;
-    inset: 0 auto auto 0;
-    width: 58mm;
-    padding: 4mm;
-    border: 0;
-    box-shadow: none;
-    font-size: 9pt;
-  }
-
-  /* Modal cetak: overlay harus ikut hilang dari layout cetak,
-     tetapi struk di dalamnya tetap ikut tercetak. */
-  .receipt-dialog-overlay {
-    position: static !important;
-    display: block !important;
-    overflow: visible !important;
-    background: transparent !important;
-    padding: 0 !important;
+    width: 58mm !important;
+    min-height: 0 !important;
+    height: auto !important;
     margin: 0 !important;
-    z-index: auto !important;
+    padding: 0 !important;
+    background: #fff !important;
   }
 
-  .receipt-dialog-panel {
+  /* Buang semua yang bukan struk dari layout, bukan sekadar disembunyikan.
+     Ini mencegah halaman kasir ikut tercetak sebagai halaman kosong. */
+  body *:not(:has(.receipt-printable)):not(.receipt-printable):not(.receipt-printable *) {
+    display: none !important;
+  }
+
+  /* Netralisasi rantai induk struk (overlay modal / main halaman order). */
+  body *:has(.receipt-printable) {
+    display: block !important;
+    position: static !important;
     width: auto !important;
     max-width: none !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
     border: 0 !important;
     border-radius: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .receipt-printable {
+    position: static !important;
+    width: 58mm !important;
+    max-width: none !important;
     margin: 0 !important;
+    padding: 3mm !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .receipt-printable,
+  .receipt-printable * {
+    font-size: 8pt !important;
+    line-height: 1.25 !important;
+  }
+
+  .receipt-printable img {
+    width: 24mm !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  .receipt-printable .barcode {
+    font-size: 9pt !important;
+  }
+
+  .receipt-printable .font-display {
+    font-size: 9pt !important;
+  }
+
+  .receipt-printable .truncate {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+
+  .receipt-printable dl:last-of-type dt:last-child,
+  .receipt-printable dl:last-of-type dd:last-child {
+    font-size: 9pt !important;
+    font-weight: 700 !important;
   }
 
   .no-print {
